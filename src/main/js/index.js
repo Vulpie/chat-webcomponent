@@ -1,5 +1,6 @@
-import "../css/main.scss"
+import '../css/main.scss'
+import Controller from './Controller/Controller'
+import Model from './Model/Model'
+import View from './View'
 
-import { helloWorld } from './world'
-
-helloWorld()
+const app = new Controller(new View(), new Model())
