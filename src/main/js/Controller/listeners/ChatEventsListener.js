@@ -1,3 +1,5 @@
+import { getCurrentTime } from '../../helpers/getCurrentTime'
+
 export default class ChatEventListener {
 	constructor(controller) {
 		this.shadowRoot = controller.shadowRoot
@@ -14,7 +16,7 @@ export default class ChatEventListener {
 				controller.newMessage({
 					author: 'Vulpie',
 					content,
-					createdAt: Date.now(),
+					createdAt: getCurrentTime(),
 				})
 				e.target['user_input'].value = ''
 				e.target['user_input'].focus
@@ -36,7 +38,7 @@ export default class ChatEventListener {
 				controller.newMessage({
 					author: 'Vulpie',
 					content: value,
-					createdAt: Date.now(),
+					createdAt: getCurrentTime(),
 				})
 			}
 		})

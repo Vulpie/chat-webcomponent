@@ -1,4 +1,5 @@
 import io from 'socket.io-client'
+import { getCurrentTime } from '../../helpers/getCurrentTime'
 
 export default class RasaSocket {
 	constructor(controller) {
@@ -9,14 +10,14 @@ export default class RasaSocket {
 				controller.newMessage({
 					author: 'Rasa',
 					content: rasa_response.text,
-					createdAt: Date.now(),
+					createdAt: getCurrentTime(),
 					buttons: rasa_response.quick_replies,
 				})
 			}
 			controller.newMessage({
 				author: 'Rasa',
 				content: rasa_response.text,
-				createdAt: Date.now(),
+				createdAt: getCurrentTime(),
 			})
 		})
 	}
