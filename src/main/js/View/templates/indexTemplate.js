@@ -71,6 +71,23 @@ indexTemplate.innerHTML = `
 }
 .message__content{}
 
+.root__form{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid black;
+}
+.root__form_input{
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.root__form_button{
+    width: 30%;
+    height: 100%;
+    box-sizing: border-box;
+}
 </style>
 <div class="root">
     <div class="root__bar">
@@ -78,5 +95,9 @@ indexTemplate.innerHTML = `
         <button class="root__bar_button">&#8645;</button>
     </div>
     <div class="root__chat"></div>
+    <div class="root__form">
+        <input class="root__form_input">
+        <button class="root__form_button">Wyślij</button>
+    </div>
 </div>
 `
