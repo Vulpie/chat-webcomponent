@@ -35,4 +35,12 @@ export default class Controller {
 	toggleChat() {
 		this.view.toggleChat()
 	}
+
+	setConnectionStatus(status) {
+		if (!status) {
+			this.view.showAlert()
+		} else {
+			this.view.hideAlert()
+		}
+	}
 }

@@ -20,5 +20,13 @@ export default class RasaSocket {
 				createdAt: getCurrentTime(),
 			})
 		})
+
+		this.socket.on('reconnect_attempt', () => {
+			controller.setConnectionStatus(false)
+		})
+
+		this.socket.on('connect', () => {
+			controller.setConnectionStatus(true)
+		})
 	}
 }

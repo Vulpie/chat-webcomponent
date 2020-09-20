@@ -34,4 +34,13 @@ export default class View {
 			this.shadowRoot.querySelector('.root__form').style.display = 'none'
 		}
 	}
+
+	showAlert() {
+		this.shadowRoot.querySelector('.root__chat').style.display = 'none'
+		this.shadowRoot.querySelector('.root__alert').style.display = 'block'
+	}
+	hideAlert() {
+		this.shadowRoot.querySelector('.root__chat').style.display = 'flex'
+		this.shadowRoot.querySelector('.root__alert').style.display = 'none'
+	}
 }
