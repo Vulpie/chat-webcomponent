@@ -72,7 +72,31 @@ indexTemplate.innerHTML = `
 .message__header_created-at{
     font-style: italic;
 }
-.message__content{}
+.message__content{
+    display: flex;
+    flex-direction: column;
+}
+.message__content_btn-box{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.message__content_btn-box_button{
+    background-color: ${color_palette.text};
+    color: ${color_palette.rasa};
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 2px;
+}
+.message__content_btn-box_button:hover{
+    box-shadow: 4px 4px 4px ${color_palette.text};
+    text-shadow: 4px 4px 4px ${color_palette.rasa};
+    cursor: pointer;
+}
+
 
 .root__form{
     width: 100%;

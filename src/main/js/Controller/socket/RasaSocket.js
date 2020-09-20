@@ -6,6 +6,15 @@ export default class RasaSocket {
 
 		this.socket.on('bot_uttered', (rasa_response) => {
 			console.log(rasa_response)
+
+			if (rasa_response.quick_replies) {
+				controller.newMessage({
+					author: 'Rasa',
+					content: rasa_response.text,
+					createdAt: Date.now(),
+					buttons: rasa_response.quick_replies,
+				})
+			}
 			controller.newMessage({
 				author: 'Rasa',
 				content: rasa_response.text,

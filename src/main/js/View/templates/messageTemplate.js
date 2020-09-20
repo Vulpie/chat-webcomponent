@@ -1,28 +1,31 @@
-export const messageTemplate = ({ author, content, createdAt }) => {
-	const $author = document.createElement('p')
-	$author.innerText = author
-	$author.classList.add('message__header_author')
+export const messageTemplate = ({ author, content, createdAt, buttons }) => {
+	const output = `<div class="message__header">
+			<p class="message__header_author">${author}</p>
+			<p class="message__header_created-at">${createdAt}</p>
+		</div>
+		<div class="message__content">${content}</div>`
 
-	const $createdAt = document.createElement('p')
-	$createdAt.innerText = createdAt
-	$createdAt.classList.add('message__header_created-at')
-
-	const $message_header = document.createElement('div')
-	$message_header.classList.add('message__header')
-	$message_header.append($author, $createdAt)
-
-	const $content = document.createElement('p')
-	$content.innerText = content
-	$content.classList.add('message__content')
-
+	let message_type = 'user'
+	if (author === 'Rasa') {
+		message_type = 'rasa'
+	}
 	const $message = document.createElement('div')
 	$message.classList.add('message')
-	if (author === 'Rasa') {
-		$message.classList.add('rasa')
-	} else {
-		$message.classList.add('user')
+	$message.classList.add(message_type)
+	$message.innerHTML = output
+
+	if (buttons) {
+		const $button_box = document.createElement('div')
+		$button_box.classList.add('message__content_btn-box')
+		buttons.forEach((btn) => {
+			const $new_btn = document.createElement('div')
+			$new_btn.innerText = btn.title
+			$new_btn.dataset.payload = btn.payload
+			$new_btn.classList.add('message__content_btn-box_button')
+			$button_box.append($new_btn)
+		})
+		$message.append($button_box)
 	}
-	$message.append($message_header, $content)
 
 	return $message
 }
