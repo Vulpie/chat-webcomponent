@@ -19,20 +19,9 @@ export default class Model {
 		this.messages.push(message_object)
 		this.store.setItem('messages', JSON.stringify(this.messages))
 	}
-}
 
-// const messages = [
-// 	{ author: 'vulpie', content: 'Hej', createdAt: '15:14' },
-// 	{ author: 'Rasa', content: 'Cześć', createdAt: '15:14' },
-// 	{
-// 		author: 'vulpie',
-// 		content: 'Jaki jest limit miejsc na informatyce',
-// 		createdAt: '15:14',
-// 	},
-// 	{
-// 		author: 'Rasa',
-// 		content: '80 na stacjonarnych',
-// 		createdAt: '15:14',
-// 	},
-// 	{ author: 'Rasa', content: '50 na zaocznych', createdAt: '15:14' },
-// ]
+	closeChat() {
+		this.store.setItem('messages', '')
+		this.messages = []
+	}
+}

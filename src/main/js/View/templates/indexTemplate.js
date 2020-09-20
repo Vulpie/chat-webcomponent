@@ -95,7 +95,8 @@ indexTemplate.innerHTML = `
 <div class="root">
     <div class="root__bar">
         <p class="root__bar_header">Wirtualny asystent rekrutacji</p>
-        <button class="root__bar_button">&#8645;</button>
+        <button class="root__bar_button" id="toggle_chat">&#8645;</button>
+        <button class="root__bar_button" id="close_chat">&#9746;</button>
     </div>
     <div class="root__chat"></div>
     <form class="root__form" id="form">
