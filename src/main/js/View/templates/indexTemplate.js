@@ -10,6 +10,7 @@ indexTemplate.innerHTML = `
 <style>
 .root{
     width: 30%;
+    min-width: 400px;
     border: 1px solid black;
     position: fixed;
     right: 0;
@@ -97,9 +98,9 @@ indexTemplate.innerHTML = `
         <button class="root__bar_button">&#8645;</button>
     </div>
     <div class="root__chat"></div>
-    <div class="root__form">
-        <input class="root__form_input">
-        <button class="root__form_button">Wyślij</button>
-    </div>
+    <form class="root__form" id="form">
+        <input class="root__form_input" name="user_input">
+        <button type="submit" class="root__form_button">Wyślij</button>
+    </form>
 </div>
 `

@@ -1,14 +1,23 @@
+import Model from '../Model/Model'
+import View from '../View/View'
+
+import ChatEventsListener from './listeners/ChatEventsListener'
+
 export default class Controller {
-	constructor(view, model) {
-		console.log('Controller')
-		this.view = view
-		this.model = model
+	constructor(shadowRoot) {
+		this.shadowRoot = shadowRoot
+		this.view = new View(this.shadowRoot)
+		this.model = new Model()
+		this.chatEventsListener = new ChatEventsListener(this)
 		this.start()
 	}
 
 	start() {
-		const messages = this.model.start()
-		if (messages) this.view.start(messages)
+		this.model.start()
+		if (this.model.messages) this.view.start(this.model.messages)
 	}
-	newMessage() {}
+	newMessage(message_object) {
+		console.log(message_object)
+		this.model.newMessage(message_object)
+	}
 }
