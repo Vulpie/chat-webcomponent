@@ -1,4 +1,4 @@
-export const messageTemplate = (author, content, createdAt) => {
+export const messageTemplate = ({ author, content, createdAt }) => {
 	const $author = document.createElement('p')
 	$author.innerText = author
 	$author.classList.add('message__header_author')

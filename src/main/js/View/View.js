@@ -5,12 +5,12 @@ export default class View {
 		this.shadowRoot = shadowRoot
 		this.shadowRoot.appendChild(indexTemplate.content.cloneNode(true))
 		this.chat = shadowRoot.querySelector('.root__chat')
-		this.start()
 	}
 
-	start() {
-		const msg = messageTemplate('vulpie', 'Hejo elo', '14:15')
-		const msg2 = messageTemplate('Rasa', 'No cześć', '14:15')
-		this.chat.append(msg, msg2)
+	start(messages) {
+		messages.forEach((msg) => {
+			const new_msg = messageTemplate(msg)
+			this.chat.append(new_msg)
+		})
 	}
 }
