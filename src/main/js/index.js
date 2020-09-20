@@ -1,4 +1,3 @@
-import '../css/main.scss'
 import Controller from './Controller/Controller'
 
 class ChatWebComponent extends HTMLElement {

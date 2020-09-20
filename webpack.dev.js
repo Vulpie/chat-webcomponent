@@ -14,15 +14,4 @@ module.exports = merge(config, {
 			template: './src/templates/index.html',
 		}),
 	],
-	module: {
-		rules: [
-			{
-				test: /\.scss$/,
-				use: [
-					'style-loader', //3. Inject styles into DOM
-					'css-loader', //2.Turns css into js
-				], //this works in reverse order
-			},
-		],
-	},
 })
