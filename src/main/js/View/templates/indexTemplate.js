@@ -9,7 +9,7 @@ export const indexTemplate = document.createElement('template')
 indexTemplate.innerHTML = `
 <style>
 .root{
-    width: 50%;
+    width: 30%;
     border: 1px solid black;
     position: fixed;
     right: 0;
@@ -35,6 +35,8 @@ indexTemplate.innerHTML = `
     width: 100%;
     display: flex;
     flex-direction: column;
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 .user{

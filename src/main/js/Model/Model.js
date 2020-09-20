@@ -10,10 +10,15 @@ export default class Model {
 			{ author: 'Rasa', content: 'Cześć', createdAt: '15:14' },
 			{
 				author: 'vulpie',
-				content: 'Jkai jest limit miejsc na informatyce',
+				content: 'Jaki jest limit miejsc na informatyce',
 				createdAt: '15:14',
 			},
-			{ author: 'Rasa', content: '80', createdAt: '15:14' },
+			{
+				author: 'Rasa',
+				content: '80 na stacjonarnych',
+				createdAt: '15:14',
+			},
+			{ author: 'Rasa', content: '50 na zaocznych', createdAt: '15:14' },
 		]
 		if (messages) {
 			return messages
