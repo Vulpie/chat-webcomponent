@@ -1,6 +1,14 @@
-import '../css/main.scss'
+import stylesheet from '../css/main.scss'
 import Controller from './Controller/Controller'
 import Model from './Model/Model'
-import View from './View'
+import View from './View/View'
 
-const app = new Controller(new View(), new Model())
+class ChatWebComponent extends HTMLElement {
+	constructor() {
+		super()
+		this.attachShadow({ mode: 'open' })
+		this.app = new Controller(new View(this.shadowRoot), new Model())
+	}
+}
+
+window.customElements.define('chat-web-component', ChatWebComponent)
