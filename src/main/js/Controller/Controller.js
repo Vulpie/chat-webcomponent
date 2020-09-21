@@ -2,7 +2,7 @@ import Model from '../Model/Model'
 import View from '../View/View'
 
 import ChatEventsListener from './listeners/ChatEventsListener'
-import ComponentEventsListener from './listeners/ComponentEvenetsListener.js'
+import ComponentEventsListener from './listeners/ComponentEventsListener.js.js'
 import RasaSocket from './socket/RasaSocket'
 
 export default class Controller {
