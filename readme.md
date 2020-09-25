@@ -38,6 +38,8 @@ Add component to your html file
 
 ## Required Rasa configuration
 
+### credentails.yml
+
 ```yml
 socketio:
     user_message_evt: user_uttered
