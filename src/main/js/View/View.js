@@ -10,7 +10,7 @@ export default class View {
 
 	start(messages) {
 		messages.forEach((msg) => {
-			const new_msg = messageTemplate(msg)
+			const new_msg = this.newMessage(msg)
 			this.chat.append(new_msg)
 		})
 	}
@@ -18,6 +18,7 @@ export default class View {
 	newMessage(message_object) {
 		const new_msg = messageTemplate(message_object)
 		this.chat.append(new_msg)
+		return new_msg
 	}
 
 	closeChat() {

@@ -35,3 +35,12 @@ Add component to your html file
 ```html
 <chat-web-component></chat-web-component>
 ```
+
+## Required Rasa configuration
+
+```yml
+socketio:
+    user_message_evt: user_uttered
+    bot_message_evt: bot_uttered
+    session_persistence: false
+```

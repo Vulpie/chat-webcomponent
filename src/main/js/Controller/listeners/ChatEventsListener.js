@@ -10,11 +10,11 @@ export default class ChatEventListener {
 				const content = e.target['user_input'].value
 				let data = {
 					message: content,
-					sender: 'Vulpie',
+					sender: 'User',
 				}
 				controller.rasaSocket.socket.emit('user_uttered', data)
 				controller.newMessage({
-					author: 'Vulpie',
+					author: 'User',
 					content,
 					createdAt: getCurrentTime(),
 				})
@@ -32,11 +32,11 @@ export default class ChatEventListener {
 
 				let data = {
 					message: payload,
-					sender: 'Vulpie',
+					sender: 'User',
 				}
 				controller.rasaSocket.socket.emit('user_uttered', data)
 				controller.newMessage({
-					author: 'Vulpie',
+					author: 'User',
 					content: value,
 					createdAt: getCurrentTime(),
 				})
