@@ -26,6 +26,8 @@ Run webpack in production mode to build a bundle
 
 Link bundled script
 
+**_Bundle name is created dynamically. Check bundle name after build is completed._**
+
 ```html
 <script src="main.e07a532dad1104a25b55.bundle.js"></script>
 ```
